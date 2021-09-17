@@ -8,7 +8,7 @@ export const Form = () => {
   }
 
   return (
-    <form>
+    <form className={styles.form}>
       <label htmlFor="email">Email</label>
       <input type="email" id="email" />
 
