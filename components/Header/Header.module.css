@@ -1,9 +1,9 @@
 .header {
-    padding: 1px 10px;
+    padding: 10px 10px;
     background-color: rgb(32, 48, 64);
     color: white;
 }
 
-.header p {
+.header_p {
     font-size: 17px;
 }

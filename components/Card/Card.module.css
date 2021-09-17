@@ -10,6 +10,10 @@
     animation: 0.5s fadeIn ease-in;
 }
 
+.card p {
+    margin: 10px;
+}
+
 .card:hover {
     cursor: pointer;
 }
@@ -36,16 +40,4 @@
 
 .card_img {
     width: 100%;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translate(0px, -20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
 }

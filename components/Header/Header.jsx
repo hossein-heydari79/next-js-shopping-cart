@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 export const Header = () => {
   return (
     <div className={styles.header}>
-      <p>React Shopping Cart</p>
+      <p className={styles.header_p}>React Shopping Cart</p>
     </div>
   );
 };
