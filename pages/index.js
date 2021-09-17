@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import { Header } from '../components/Header/Header.jsx'
@@ -11,10 +10,9 @@ import { Cardlist } from '../components/Cardlist/Cardlist'
 import { Pay } from '../components/Pay/Pay'
 import { Form } from '../components/Form/Form'
 import { Modals } from '../components/Modals/Modals'
-import data from '../data'
 import { useState, useEffect } from 'react'
 
-export default function Home() {
+export default function Home({ data }) {
 
 
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
@@ -87,6 +85,12 @@ export default function Home() {
   return (
     <>
 
+      <Head>
+
+        <title>next js</title>
+
+      </Head>
+
 
       {
         show.show && < Modals show={showModal} hide={hideModal} datamodal={dataModal} cardlist={cardlist} setCardlist={setCardlist} />
@@ -132,4 +136,17 @@ export default function Home() {
 
     </>
   )
+}
+
+
+export async function getStaticProps() {
+
+  const data = await (await fetch("http://localhost:3000/api/hello")).json();
+
+  return {
+    props: {
+      data,
+    }
+  }
+
 }
